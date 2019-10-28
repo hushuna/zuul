@@ -43,7 +43,7 @@ public class Filter extends ZuulFilter {
 
         boolean flag = RedisUtil.hasKey(token);
 
-        if (StringUtils.isEmpty(token) && flag) {
+        if (!StringUtils.isEmpty(token) && flag) {
             ctx.setSendZuulResponse(true); //对请求进行路由
             ctx.setResponseStatusCode(200);
             ctx.set("isSuccess", true);
@@ -54,6 +54,7 @@ public class Filter extends ZuulFilter {
             ctx.setResponseBody("token is empty");
             ctx.set("isSuccess", false);
             return null;
+
         }
     }
 }
