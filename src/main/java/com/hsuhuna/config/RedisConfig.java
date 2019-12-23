@@ -38,7 +38,7 @@ public class RedisConfig {
         // 序列化储存
         jackson2JsonRedisSerializer.setObjectMapper(om);
         //TODO测试
-        //template.setValueSerializer(jackson2JsonRedisSerializer);
+//        template.setValueSerializer(jackson2JsonRedisSerializer);
 
         //key
         template.setKeySerializer(stringSerializer);
